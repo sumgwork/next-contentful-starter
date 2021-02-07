@@ -40,7 +40,11 @@ const Post = ({ post }) => {
         {documentToReactComponents(post.fields.content, {
           renderNode: {
             [BLOCKS.EMBEDDED_ASSET]: (node) => (
-              <img src={`https:${node.data.target.fields.file.url}`} />
+              <img
+                src={`https:${node.data.target.fields.file.url}`}
+                width={node.data.target.fields.file.details.image.width}
+                height={node.data.target.fields.file.details.image.height}
+              />
               // <Image
               //   src={`https:${node.data.target.fields.file.url}`}
               //   width={node.data.target.fields.file.details.image.width}
